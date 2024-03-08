@@ -6,4 +6,6 @@ WORKDIR /app
 
 COPY . .
 
+RUN apt-get update && apt-get install -y ffmpeg
+
 CMD ["/bin/bash", "./src/run.sh"]
