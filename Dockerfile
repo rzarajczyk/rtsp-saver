@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM ubuntu:23.10
 
 RUN mkdir -p /output
 
@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN apt-get update && apt-get install -y ffmpeg
+RUN apt update && apt install -y ffmpeg
 
 CMD ["/bin/bash", "./src/run.sh"]
