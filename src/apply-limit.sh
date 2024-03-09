@@ -1,10 +1,9 @@
 #!/bin/bash
 echo "$(date --iso=seconds) | Running apply-limit.sh"
-echo "$(date --iso=seconds) | Running apply-limit.sh" >> /cronlog.txt
 
 cd /output
 
-LIMIT=$(echo "5G" | numfmt --from=iec)
+LIMIT=$(echo "15G" | numfmt --from=iec)
 
 SIZE=$(du -sb | tr -dc '0-9')
 while [ "$SIZE" -gt "$LIMIT" ];
