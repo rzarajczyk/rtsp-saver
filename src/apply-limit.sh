@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "$(date --iso=seconds) | Running apply-limit.sh"
-echo "$(date --iso=seconds) | Running apply-limit.sh" > /cronlog.txt
+echo "$(date --iso=seconds) | Running apply-limit.sh" >> /cronlog.txt
 
 cd /output
 
@@ -18,3 +18,5 @@ do
 
   SIZE=$(du | tr -dc '0-9')
 done
+
+echo "$(date --iso=seconds) | Space occupied by the recordings: $SIZE bytes is less or equal than configured limit $LIMIT bytes; No further actions needed"
