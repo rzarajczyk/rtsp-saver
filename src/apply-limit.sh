@@ -6,7 +6,7 @@ cd /output
 
 LIMIT=$(echo "5G" | numfmt --from=iec)
 
-SIZE=$(du | tr -dc '0-9')
+SIZE=$(du -sb | tr -dc '0-9')
 while [ "$SIZE" -gt "$LIMIT" ];
 do
   echo "$(date --iso=seconds) | Space occupied by the recordings: $SIZE bytes is greater than configured limit $LIMIT bytes"
@@ -16,7 +16,7 @@ do
   rm "$OLDEST"
   sleep 1
 
-  SIZE=$(du | tr -dc '0-9')
+  SIZE=$(du -sb | tr -dc '0-9')
 done
 
 echo "$(date --iso=seconds) | Space occupied by the recordings: $SIZE bytes is less or equal than configured limit $LIMIT bytes; No further actions needed"
