@@ -7,6 +7,6 @@ WORKDIR /app
 COPY . .
 
 RUN apt update && apt install -y ffmpeg cron
-RUN crontab -l | { cat; echo "*/15 * * * * bash /app/apply-limit.sh"; } | crontab -
+RUN crontab -l | { cat; echo "*/15 * * * * bash /app/apply-limit.sh > /dev/stdout"; } | crontab -
 
 CMD ["/bin/bash", "./src/run.sh"]

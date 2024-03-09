@@ -1,6 +1,4 @@
 #!/bin/bash
-exec 2>&1 1>/cronlog.log
-
 echo "$(date --iso=seconds) | Running apply-limit.sh"
 
 cd /output
