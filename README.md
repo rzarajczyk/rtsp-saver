@@ -3,7 +3,7 @@
 Saves the RTSP streams (from the security camera) to files in MKV format.
 Build especially for usage in docker
 
-The recordings will be saved in filed for approximately 15 minutes
+The recordings will be saved in files of approximately 15 minutes length
 
 ## Usage: docker compose
 
@@ -22,8 +22,8 @@ services:
 Important configuration:
 
 - volume mounted in `/output` will be a place where the recordings are saved
-- env STREAM - the url of the camera stream (check your camera manual for details)
-- env SPACE_LIMIT - the limit of disk space which the recordings may take; if the recordings exceed the limit, the
+- env variable `STREAM` - the url of the camera stream (check your camera manual for details)
+- env variable `SPACE_LIMIT` - the limit of disk space which the recordings may take; if the recordings exceed the limit, the
   oldest ones will be deleted
 
 
