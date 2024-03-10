@@ -3,6 +3,8 @@
 Saves the RTSP streams (from the security camera) to files in MKV format.
 Build especially for usage in docker
 
+The recordings will be saved in filed for approximately 15 minutes
+
 ## Usage: docker compose
 
 ```yaml
