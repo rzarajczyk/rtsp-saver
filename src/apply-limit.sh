@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "$(date --iso=seconds) | Running apply-limit.sh"
 
-cd /output
+cd /output || exit 1
 
-SPACE_LIMIT="${SPACE_WAIT:10G}"
+SPACE_LIMIT="${SPACE_LIMIT:10G}"
 LIMIT=$(echo "$SPACE_LIMIT" | numfmt --from=iec)
 
 SIZE=$(du -sb | tr -dc '0-9')
