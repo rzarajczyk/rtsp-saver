@@ -3,6 +3,7 @@ echo "$(date --iso=seconds) | Running apply-limit.sh"
 
 cd /output || exit 1
 
+SPACE_LIMIT=$(cat /space-limit.env)
 SPACE_LIMIT="${SPACE_LIMIT:-10G}"
 LIMIT=$(echo "$SPACE_LIMIT" | numfmt --from=iec)
 

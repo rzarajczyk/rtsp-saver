@@ -1,6 +1,9 @@
 #!/bin/bash
+# Start cron process and export variables required for the cron
 cron
+echo "$SPACE_LIMIT" > /space-limit.env
 
+# Actual process
 STREAM="${STREAM:rtsp}"
 
 while true; do
@@ -20,7 +23,6 @@ while true; do
       -segment_format mkv \
       -segment_atclocktime 1 \
       -strftime 1 /output/%Y-%m-%d-%H-%M-%S.mkv
-      #  -loglevel error \
 
   CODE=$?
 
