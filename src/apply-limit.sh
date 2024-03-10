@@ -6,6 +6,8 @@ cd /output || exit 1
 SPACE_LIMIT="${SPACE_LIMIT:10G}"
 LIMIT=$(echo "$SPACE_LIMIT" | numfmt --from=iec)
 
+echo "$(date --iso=seconds) | Configured space limit: $SPACE_LIMIT ($LIMIT bytes)"
+
 SIZE=$(du -sb | tr -dc '0-9')
 while [ "$SIZE" -gt "$LIMIT" ];
 do
