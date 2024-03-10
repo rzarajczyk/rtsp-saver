@@ -25,3 +25,9 @@ Important configuration:
 - env STREAM - the url of the camera stream (check your camera manual for details)
 - env SPACE_LIMIT - the limit of disk space which the recordings may take; if the recordings exceed the limit, the
   oldest ones will be deleted
+
+
+## Noteworthy links:
+
+ - [Saving RTSP Camera Streams with FFmpeg](https://medium.com/@tom.humph/saving-rtsp-camera-streams-with-ffmpeg-baab7e80d767)
+ - [HOW TO RUN CRON JOBS INSIDE DOCKER](https://lostindetails.com/articles/How-to-run-cron-inside-Docker)
