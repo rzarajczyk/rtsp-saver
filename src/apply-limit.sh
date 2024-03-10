@@ -3,7 +3,8 @@ echo "$(date --iso=seconds) | Running apply-limit.sh"
 
 cd /output
 
-LIMIT=$(echo "15G" | numfmt --from=iec)
+SPACE_LIMIT="${SPACE_WAIT:10G}"
+LIMIT=$(echo "$SPACE_LIMIT" | numfmt --from=iec)
 
 SIZE=$(du -sb | tr -dc '0-9')
 while [ "$SIZE" -gt "$LIMIT" ];
