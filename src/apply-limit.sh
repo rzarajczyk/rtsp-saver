@@ -3,7 +3,7 @@ echo "$(date --iso=seconds) | Running apply-limit.sh"
 
 cd /output || exit 1
 
-SPACE_LIMIT="${SPACE_LIMIT:10G}"
+SPACE_LIMIT="${SPACE_LIMIT:-10G}"
 LIMIT=$(echo "$SPACE_LIMIT" | numfmt --from=iec)
 
 echo "$(date --iso=seconds) | Configured space limit: $SPACE_LIMIT ($LIMIT bytes)"
